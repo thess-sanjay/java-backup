@@ -1,0 +1,41 @@
+class Insagram 
+{
+	static String userName = "SpiderMan";
+	static String userEmail = "peter.parker@gmail.com";
+	static long userPhNo = 1234567890L;
+	static String userPass = "PeterWithMJ";
+	
+	
+	public static void login(String email, String pass)
+	{
+		if(userPass == pass && userEmail.equals(email))
+		{
+			System.out.println("Successfully logged in");
+		}
+		else
+		{
+			System.out.println("Enter the Correct Pass da Spider");
+		}
+		
+	}
+	
+	public static void login(long phNo, String pass)
+	{
+		if(userPhNo == phNo && userPass.equals(pass))
+		{
+			System.out.println("Successfully logged in");
+		}
+		else
+		{
+			System.out.println("Wrong Credentials");
+		}
+	}
+	
+	
+	public static void main(String[] args) 
+	{
+		//login("peter.parker@gmail.com", "PeterWithMJ");
+		
+		login(1234567890L, "PeterWithGwen");
+	}
+}

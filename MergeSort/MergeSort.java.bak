@@ -1,0 +1,69 @@
+import java.util.Arrays;
+
+
+class MergeSort
+{
+	
+	public static void mergeSorting(int arr[], int start, int end){
+		
+		int mid = (start+end) / 2;
+		int i=start, j=mid+1, k=0;
+		
+		int brr[] = new int[end - start + 1];
+		
+		while(i<=mid && j<=end){
+			
+			if(arr[i] < arr[j]){
+				brr[k] = arr[i];
+				i++;
+				k++;
+			}else{
+				brr[k] = arr[j];
+				j++;
+				k++;
+			}
+		}
+		
+		while(i<=mid){
+			brr[k] = arr[i];
+			i++;
+			k++;
+		}
+		
+		while(j<=end){
+			brr[k] = arr[j];
+			j++;
+			k++;
+		}
+		
+		
+		for(int n=0; n<brr.length; n++){
+			arr[start + n] = brr[n];
+		}
+		
+	}
+	
+	
+	public static void divideArr(int arr[], int start, int end){
+		
+		if(start >= end)
+			return;
+		
+		int mid = (start + end) / 2;
+		
+		divideArr(arr, start, mid);
+		divideArr(arr, mid, end);
+		
+		mergeSorting(arr, start, end);
+	} 
+	
+	
+	public static void main(String[] args){
+		
+		int arr[] = {3,5,4,2,7,1,6};
+		
+		divideArr(arr, 0, arr.length-1);
+		
+		System.out.println(Arrays.toString(arr));
+	}
+}

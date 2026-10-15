@@ -1,0 +1,64 @@
+//Encapsulation
+
+class Employee
+{
+	private String ename;
+	private int eid;
+	private double salary;
+	private String dept;
+	
+	//Getters
+	public String getEname()
+	{
+		return ename;
+	}
+	public int getEid()
+	{
+		return eid;
+	}
+	public double getSal()
+	{
+		return salary;
+	}
+	public String getDept()
+	{
+		return dept;
+	}
+	
+	//Setters
+	public void setEname(String ename)
+	{
+		this.ename = ename;
+	}
+	public void setEid(int eid)
+	{
+		this.eid = eid;
+	}
+	public void setSal(double salary)
+	{
+		this.salary = salary;
+	}
+	public void setDept(String dept)
+	{
+		this.dept = dept;
+	}
+}
+
+class Main
+{
+	public static void main(String[] args)
+	{
+		Employee ob = new Employee();
+		
+		ob.setEname("Miller");
+		ob.setEid(24);
+		ob.setSal(50000.4);
+		ob.setDept("Developr");
+		
+		
+		System.out.println(ob.getEname());
+		System.out.println(ob.getEid());
+		System.out.println(ob.getSal());
+		System.out.println(ob.getDept());
+	}
+}

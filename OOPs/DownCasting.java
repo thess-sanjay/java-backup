@@ -1,0 +1,40 @@
+class Person
+{
+	void eat()
+	{
+		System.out.println("Can eat");
+	}
+}
+class Student extends Person
+{
+	void study()
+	{
+		System.out.println("Can study");
+	}
+}
+
+
+class DownCasting
+{
+	public static void main(String[] args) 
+	{
+		Student s1 = new Student();
+		s1.study();
+		s1.eat();
+		
+		Person p1 = new Person();
+		p1.eat();
+		//p1.study();  Not Possible
+		
+		Person p2 = new Student();
+		p2.eat();
+		//p2.study(); Not Possible
+		
+		//Student s2 = p2; Not Possible it'll give error
+		
+		System.out.println("After DownCasting...");
+		Student s2 = (Student) p2; //DownCasting 
+		s2.study();
+		s2.eat();
+	}
+}

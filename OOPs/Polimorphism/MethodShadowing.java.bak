@@ -1,0 +1,34 @@
+class Parent
+{
+	static void dancing()
+	{
+		int x = 20;
+		System.out.println("Parents are dancing");
+	}
+}
+
+class Child extends Parent
+{
+	static void dancing()
+	{
+		int x = 10;
+		System.out.println("Child is dancing");
+	}
+}
+
+
+class MethodShadowing
+{
+	public static void main(String[] args) 
+	{
+		Child c = new Child();
+		c.dancing();
+		System.out.println(c.x);
+		
+		Parent p = new Parent();
+		p.dancing();
+		
+		Parent p1 = new Child();
+		p1.dancing();
+	}
+}

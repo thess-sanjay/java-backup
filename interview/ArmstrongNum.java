@@ -1,0 +1,34 @@
+class ArmstrongNum
+{
+	public static int isArmstrongNum(int n){
+		
+		int temp = n;
+		int sum = 0;
+		int count = 0;
+		
+		while(temp > 0){
+			int ld = temp % 10;
+			count++;
+			temp/=10;
+		}
+		
+		while(n > 0){
+			int ld2 = n % 10;
+			sum += Math.pow(ld2, count);
+			n/=10;
+		}
+		return sum;
+	}
+	
+	public static void main(String[] args){
+		
+		int num = 153;
+		
+		int sum = isArmstrongNum(num);
+		
+		if(sum == num)
+			System.out.println("Its Armstrong Number");
+		else
+			System.out.println("Its not Arstrong Number");
+	}
+}

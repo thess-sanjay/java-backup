@@ -1,0 +1,38 @@
+class Parent
+{
+	String bike;
+	int money;
+	
+	void parentDetails()
+	{
+		System.out.println(bike);
+		System.out.println(money);
+	}
+}
+
+class Child extends Parent
+{
+	String mobile;
+	
+	void childDetails()
+	{
+		System.out.println(mobile);
+	}
+}
+
+class TypeCasting 
+{
+	public static void main(String[] args) 
+	{
+		Parent p1 = new Parent();
+		p1.parentDetails();
+		
+		Child c1 = new Child();
+		c1.childDetails();
+		c1.parentDetails();
+		
+		System.out.println("<---UpCasting--->");
+		Parent p2 = new Child();
+		p2.parentDetails();
+	}
+}

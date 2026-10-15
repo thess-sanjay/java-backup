@@ -1,0 +1,28 @@
+abstract class KFC
+{
+	abstract void briyani();
+	void price(){
+		System.out.println("price is: 300rs");
+	}
+}
+class SecondFloor extends KFC
+{
+	@Override
+	void briyani(){
+		System.out.println("Mutton Briyani");
+	}
+}
+
+class Restaurant 
+{
+	public static void main(String[] args) 
+	{
+		SecondFloor ob = new SecondFloor();
+		ob.briyani();
+		ob.price();
+		
+		KFC ob2 = new SecondFloor();
+		ob2.briyani();
+		ob2.price();
+	}
+}

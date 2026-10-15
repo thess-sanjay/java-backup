@@ -1,0 +1,36 @@
+import java.util.Arrays;
+
+class SpecialIndex
+{
+	public static void main(String[] args) 
+	{
+		int[] arr = {2,1,6,4};
+		int n = arr.length -1;
+	
+		
+		for(int i=0; i<n; i++){
+			
+			int evenSum = 0;
+			int oddSum = 0;
+			int newIndex = 0;
+				for(int j=0; j<n; j++){
+					if(i == j)
+						continue;
+					if(i % 2 == 0)
+						evenSum += i;
+					else
+						oddSum += i;
+				}
+			
+
+		
+		if(evenSum == oddSum){
+			System.out.println("Its a Special Index");
+		}
+		else{
+			System.out.println("Its not a Special Index");
+		}
+		
+		}
+	}
+}

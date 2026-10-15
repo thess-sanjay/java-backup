@@ -1,0 +1,37 @@
+class Anagram 
+{
+	public static void main(String[] args) 
+	{
+		String s = "listen";
+		String f = "silend";
+		
+		if(s.length() != f.length()){
+			System.out.println("Its not an Anagram");
+			return;
+		}
+			
+		
+		
+		int arr[] = new int[26];
+		
+		for(int i=0; i<s.length(); i++){
+			arr[s.charAt(i) - 'a']++;
+			arr[f.charAt(i) - 'a']--;
+		}
+		
+		boolean isAnagram = true;
+		
+		for(int values : arr){
+			if( values != 0){
+				isAnagram = false;
+				break;
+			}
+		}
+		
+		if(isAnagram){
+			System.out.println("Its Anagram");
+		}else{
+			System.out.println("Its not an Anagram");
+		}
+	}
+}
